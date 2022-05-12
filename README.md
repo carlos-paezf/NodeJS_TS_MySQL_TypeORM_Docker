@@ -24,3 +24,4 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 ## Documentación paso a paso
 
 - [Creando una aplicación de servidor - Parte 1](DOC/P1T1_Creando_Aplicacion_Servidor.md "P1T1")
+- [Creando una aplicación de servidor - Parte 2](DOC/P1T2_Creando_Aplicacion_Servidor.md "P1T2")
