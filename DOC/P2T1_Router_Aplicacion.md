@@ -134,3 +134,7 @@ class ServerBootstrap {
 ```
 
 Luego podemos hacer las pruebas dentro del API Client usando la ruta `http://localhost:8000/api/user` con el método GET.
+
+| Anterior                                                                   |                        | Siguiente |
+| -------------------------------------------------------------------------- | ---------------------- | --------- |
+| [Creando una aplicación de servidor - Parte 2](P1T2_Creando_Aplicacion_Servidor.md) | [Readme](../README.md) | [Configuración de Entorno de nuestra aplicación](P3T1_Configuracion_Entorno.md) |

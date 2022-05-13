@@ -10,15 +10,6 @@ Tenemos un modelo basado en un e-commerce:
 
 ![tables](img/tables.png)
 
-<hr />
-<table style="width: 100%">
-    <tr>
-        <td style="width: 33%">
-            <a href="./P4T1_Docker_Compose_TypeORM.md">Docker Compose y TypeORM</a>
-        <td>
-        <td align="center" style="width: 33%">
-            <a href="../README.md">README</a>
-        <td>
-        <td align="right" style="width: 34%"><td>
-    </tr>
-</table>
+| Anterior                                                                   |                        | Siguiente |
+| -------------------------------------------------------------------------- | ---------------------- | --------- |
+| [Docker Compose y TypeORM (Base de Datos)](P4T1_Docker_Compose_TypeORM.md) | [Readme](../README.md) | [Arquitectura y Relaciones de Entidades - Parte 2](P5T2_Arquitectura_Relaciones_Entidades.md) |
