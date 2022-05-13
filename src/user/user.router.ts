@@ -1,5 +1,5 @@
-import { BaseRouter } from "./router";
-import { UserController } from '../controllers/user.controller';
+import { BaseRouter } from "../shared/router/router";
+import { UserController } from './controllers/user.controller';
 import { Request, Response } from "express";
 
 /**
