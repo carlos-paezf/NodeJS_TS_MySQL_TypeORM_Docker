@@ -31,3 +31,4 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 - [Configuración de entorno de nuestra aplicación](DOC/P3T1_Configuracion_Entorno.md "P3T1")
 - [Docker Compose y TypeORM (Base de Datos)](DOC/P4T1_Docker_Compose_TypeORM.md "P4T1")
 - [Arquitectura y Relaciones de Entidades - Parte 1](DOC/P5T1_Arquitectura_Relaciones_Entidades.md "P5T1")
+- [Arquitectura y Relaciones de Entidades - Parte 2](DOC/P5T2_Arquitectura_Relaciones_Entidades.md "P5T2")
