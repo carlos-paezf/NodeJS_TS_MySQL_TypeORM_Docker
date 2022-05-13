@@ -3,16 +3,19 @@ import morgan from 'morgan'
 import cors from 'cors'
 import { green } from "colors"
 import { UserRouter } from "./router/user.router"
+import { ConfigServer } from "./config/config"
 
 
 /**
  * @author Carlos Páez
  */
-class ServerBootstrap {
+class ServerBootstrap extends ConfigServer {
     private _app: express.Application = express()
-    private _port: number = 8000
+    private _port: number = this.getNumberEnv('PORT') || 8000
 
     constructor() {
+        super()
+
         this._app.use(express.json())
         this._app.use(express.urlencoded({ extended: true }))
         this._app.use(morgan('dev'))
@@ -36,5 +39,4 @@ class ServerBootstrap {
     }
 }
 
-console.clear()
 new ServerBootstrap()
