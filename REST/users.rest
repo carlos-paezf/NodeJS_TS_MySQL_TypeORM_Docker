@@ -1,1 +1,39 @@
-GET http://localhost:8000/api/user
+GET http://localhost:8000/api/users
+
+################################################################################
+
+GET http://localhost:8000/api/user/14224a2f-6978-47bf-82e1-65c1c5799443
+
+################################################################################
+
+POST http://localhost:8000/api/create-user
+Content-Type: application/json
+
+{
+    "name": "test",
+    "lastname": "test",
+    "username": "test",
+    "email": "test@test.com",
+    "password": "test_password",
+    "city": "ciudad",
+    "providence": "provincia"
+}
+
+################################################################################
+
+PUT http://localhost:8000/api/update-user/14224a2f-6978-47bf-82e1-65c1c5799443
+Content-Type: application/json
+
+{
+    "name": "actualizado",
+    "lastname": "actualizado",
+    "username": "actualizado",
+    "email": "actualizado@actualizado.com",
+    "password": "actualizado_password",
+    "city": "ciudad",
+    "providence": "provincia"
+}
+
+################################################################################
+
+DELETE http://localhost:8000/api/delete-user/b319c888-13db-4d86-80f7-d76cedebcd06

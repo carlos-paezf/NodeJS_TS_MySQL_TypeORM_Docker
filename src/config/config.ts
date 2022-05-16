@@ -1,5 +1,6 @@
+import { green, red } from 'colors'
 import * as dotenv from 'dotenv'
-import { DataSourceOptions } from 'typeorm'
+import { DataSource, DataSourceOptions } from 'typeorm'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 
 
@@ -85,8 +86,22 @@ export abstract class ConfigServer {
             entities: [__dirname + "/../**/*.entity{.ts,.js}"],
             migrations: [__dirname + "/../../migrations/*{.ts,.js}"],
             synchronize: true,
-            logging: true,
+            logging: false,
             namingStrategy: new SnakeNamingStrategy()
+        }
+    }
+
+    /**
+     * It returns a promise that resolves to a DataSource object
+     * @returns A promise of a DataSource object.
+     */
+    protected async dbConnection(): Promise<DataSource> {
+        try {
+            console.log(green('\nConexión establecida con la base de datos\n'))
+            return await new DataSource(this.configTypeORM).initialize()
+        } catch (error) {
+            console.log(red('Error al intentar conectar la base de datos'))
+            throw new Error('Error al intentar conectar la base de datos')
         }
     }
 }
