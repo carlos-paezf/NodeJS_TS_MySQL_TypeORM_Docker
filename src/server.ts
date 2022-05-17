@@ -4,6 +4,7 @@ import cors from 'cors'
 import { green } from "colors"
 import { UserRouter } from "./user/user.router"
 import { ConfigServer } from "./config/config"
+import { ProductRouter } from "./product/product.router"
 
 
 /**
@@ -28,7 +29,8 @@ class ServerBootstrap extends ConfigServer {
 
     private _routers = (): express.Router[] => {
         return [
-            new UserRouter().router
+            new UserRouter().router,
+            new ProductRouter().router
         ]
     }
 

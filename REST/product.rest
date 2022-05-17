@@ -1,0 +1,33 @@
+GET http://localhost:8000/api/products
+
+################################################################################
+
+GET http://localhost:8000/api/product/14224a2f-6978-47bf-82e1-65c1c5799443
+
+################################################################################
+
+POST http://localhost:8000/api/create-product
+Content-Type: application/json
+
+{
+    "productName": "test",
+    "description": "producto de prueba",
+    "price": "1000",
+    "category": ""
+}
+
+################################################################################
+
+PUT http://localhost:8000/api/update-product/14224a2f-6978-47bf-82e1-65c1c5799443
+Content-Type: application/json
+
+{
+    "productName": "actualizado",
+    "description": "producto de prueba",
+    "price": "1000",
+    "category": ""
+}
+
+################################################################################
+
+DELETE http://localhost:8000/api/delete-product/b319c888-13db-4d86-80f7-d76cedebcd06
