@@ -292,3 +292,7 @@ export class UserRouter extends BaseRouter<UserController> {
 ```
 
 Dentro de la carpeta `REST`, tenemos un archivo llamado `users.rest`, en donde están los ejemplos de los endpoints.
+
+| Anterior                                                                   |                        | Siguiente |
+| -------------------------------------------------------------------------- | ---------------------- | --------- |
+| [Arquitectura y Relaciones de Entidades - Parte 2](P5T2_Arquitectura_Relaciones_Entidades.md) | [Readme](../README.md) | [Manejo de Errores y Respuestas](P7T1_Manejo_Errores_Respuestas.md)  |
