@@ -136,4 +136,4 @@ export class UserController {
 
 | Anterior                                                        |                        | Siguiente |
 | --------------------------------------------------------------- | ---------------------- | --------- |
-| [Implementación de Servicios](P6T1_Implementacion_Servicios.md) | [Readme](../README.md) |           |
+| [Implementación de Servicios](P6T1_Implementacion_Servicios.md) | [Readme](../README.md) | [TypeORM 0.3.6 (Latest Version)](P8T1_TypeOrm_0.3.6.md) |
