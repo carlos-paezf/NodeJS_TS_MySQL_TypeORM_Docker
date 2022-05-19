@@ -30,7 +30,7 @@ class ServerBootstrap extends ConfigServer {
     private _routers = (): express.Router[] => {
         return [
             new UserRouter().router,
-            new ProductRouter().router
+            // new ProductRouter().router
         ]
     }
 
