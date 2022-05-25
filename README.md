@@ -33,3 +33,5 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 - [Arquitectura y Relaciones de Entidades - Parte 1](DOC/P5T1_Arquitectura_Relaciones_Entidades.md "P5T1")
 - [Arquitectura y Relaciones de Entidades - Parte 2](DOC/P5T2_Arquitectura_Relaciones_Entidades.md "P5T2")
 - [Implementación de Servicios](DOC/P6T1_Implementacion_Servicios.md "P6T1")
+- [Manejo de Errores y Respuestas](DOC/P7T1_Manejo_Errores_Respuestas.md "P7T1")
+- [TypeORM 0.3.6 (Latest Version)](DOC/P8T1_TypeOrm_0.3.6.md "P8T1")
