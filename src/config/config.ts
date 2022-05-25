@@ -1,7 +1,7 @@
 import { green, red } from 'colors'
 import * as dotenv from 'dotenv'
-import { DataSource, DataSourceOptions } from 'typeorm'
-import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
+import { DataSource } from 'typeorm'
+import { AppDataSource } from './data.config';
 
 
 /**
@@ -58,50 +58,10 @@ export abstract class ConfigServer {
     }
 
     /**
-     * It returns a `DataSourceOptions` object that contains the database connection information.
-     * The `DataSourceOptions` object is a TypeORM object that contains the database connection
-     * information.
-     * 
-     * The `getEnvironment()` function is a custom function that returns the value of an environment
-     * variable.
-     * The `getNumberEnv()` function is a custom function that returns the value of an environment
-     * variable as a number.
-     * The `SnakeNamingStrategy` object is a TypeORM object that converts the names of database tables
-     * and columns to snake case.
-     * The `synchronize` property is set to true so that TypeORM will automatically synchronize the
-     * database with the entities.
-     * The `entities` property is set to an array of paths to the entities.
-     * The `migrations` property is set to an array
-     * 
-     * @returns The return type is `DataSourceOptions`.
-     */
-    protected get configTypeORM(): DataSourceOptions {
-        return {
-            type: 'mysql',
-            host: this.getEnvironment('DB_HOST'),
-            port: this.getNumberEnv('DB_PORT'),
-            database: this.getEnvironment('DB_DATABASE'),
-            username: this.getEnvironment('DB_USER'),
-            password: this.getEnvironment('DB_PASSWORD'),
-            entities: [__dirname + "/../**/*.entity{.ts,.js}"],
-            migrations: [__dirname + "/../../migrations/*{.ts,.js}"],
-            synchronize: true,
-            logging: false,
-            namingStrategy: new SnakeNamingStrategy()
-        }
-    }
-
-    /**
      * It returns a promise that resolves to a DataSource object
      * @returns A promise of a DataSource object.
      */
-    protected async dbConnection(): Promise<DataSource> {
-        try {
-            console.log(green('\nConexión establecida con la base de datos\n'))
-            return await new DataSource(this.configTypeORM).initialize()
-        } catch (error) {
-            console.log(red('Error al intentar conectar la base de datos'))
-            throw new Error('Error al intentar conectar la base de datos')
-        }
+    protected get dbConnection(): Promise<DataSource> {
+        return AppDataSource.initialize()
     }
 }

@@ -1,10 +1,11 @@
 import express from "express"
 import morgan from 'morgan'
 import cors from 'cors'
-import { green } from "colors"
+import { blue, green, red } from 'colors';
 import { UserRouter } from "./user/user.router"
 import { ConfigServer } from "./config/config"
 import { ProductRouter } from "./product/product.router"
+import { DataSource } from 'typeorm';
 
 
 /**
@@ -22,6 +23,8 @@ class ServerBootstrap extends ConfigServer {
         this._app.use(morgan('dev'))
         this._app.use(cors())
 
+        this._dbConnect()
+
         this._app.use('/api', this._routers())
 
         this._listen()
@@ -32,6 +35,12 @@ class ServerBootstrap extends ConfigServer {
             new UserRouter().router,
             // new ProductRouter().router
         ]
+    }
+
+    private async _dbConnect(): Promise<DataSource | void> {
+        return this.dbConnection
+            .then(() => console.log(blue('> Conexión establecida con la base de datos')))
+            .catch((error) => console.log(red('> Error intentando conectar la base de datos: '), error))
     }
 
     private _listen = (): void => {
