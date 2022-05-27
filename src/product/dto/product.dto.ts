@@ -3,6 +3,9 @@ import { BaseDTO } from '../../config/base.dto';
 import { CategoryEntity } from '../../category/entities/category.entity';
 
 
+/**
+ * @author Carlos Páez
+ */
 export class ProductDTO extends BaseDTO {
     @IsNotEmpty()
     productName!: string

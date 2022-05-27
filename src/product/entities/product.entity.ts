@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 import { CategoryEntity } from "../../category/entities/category.entity";
 import { BaseEntity } from "../../config/base.entity"
-import { PurchasesProductsEntity } from '../../custom/entities/purchases-products.entity';
+import { PurchasesProductsEntity } from '../../purchase/entities/purchases-products.entity';
 
 
 /**

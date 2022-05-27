@@ -1,0 +1,31 @@
+GET http://localhost:8000/api/customers
+
+################################################################################
+
+GET http://localhost:8000/api/customers/4171e35d-4cef-4a98-bf13-23aca6fda701
+
+################################################################################
+
+POST http://localhost:8000/api/create-customer
+Content-Type: application/json
+
+{
+    "address": "Nueva direccion",
+    "dni": "12345678",
+    "user_id": ""
+}
+
+################################################################################
+
+PUT http://localhost:8000/api/update-customer/7d8a634e-efdd-4708-8835-e1f40b4d752d
+Content-Type: application/json
+
+{
+    "address": "Nueva direccion",
+    "dni": "12345678",
+    "user_id": ""
+}
+
+################################################################################
+
+DELETE http://localhost:8000/api/delete-customer/7d8a634e-efdd-4708-8835-e1f40b4d752d

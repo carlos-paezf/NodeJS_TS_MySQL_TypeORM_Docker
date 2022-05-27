@@ -4,6 +4,9 @@ import { UserDTO } from "../dto/user.dto";
 import { UserEntity } from "../entities/user.entity";
 
 
+/**
+ * @author Carlos Páez
+ */
 export class UserService extends BaseService<UserEntity> {
     constructor() {
         super(UserEntity)

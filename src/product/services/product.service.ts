@@ -3,6 +3,10 @@ import { ProductDTO } from "../dto/product.dto";
 import { ProductEntity } from "../entities/product.entity";
 import { UpdateResult, DeleteResult } from 'typeorm';
 
+
+/**
+ * @author Carlos Páez
+ */
 export class ProductService extends BaseService<ProductEntity> {
     constructor() {
         super(ProductService)

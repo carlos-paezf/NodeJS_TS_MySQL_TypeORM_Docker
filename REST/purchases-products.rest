@@ -1,0 +1,37 @@
+GET http://localhost:8000/api/purchases-products
+
+################################################################################
+
+GET http://localhost:8000/api/purchases-products/4171e35d-4cef-4a98-bf13-23aca6fda701
+
+################################################################################
+
+POST http://localhost:8000/api/create-purchases-products
+Content-Type: application/json
+
+{
+    "quantity_product": 22,
+    "total_price": "22.00",
+    "purchases": [],
+    "products": [
+        "5c9d8f8f-f8c1-4b5c-b8e7-f8f8f8f8f8f8"
+    ]
+}
+
+################################################################################
+
+PUT http://localhost:8000/api/update-purchases-products/7d8a634e-efdd-4708-8835-e1f40b4d752d
+Content-Type: application/json
+
+{
+    "quantity_product": 22,
+    "total_price": "22.00",
+    "purchases": [],
+    "products": [
+        "5c9d8f8f-f8c1-4b5c-b8e7-f8f8f8f8f8f8"
+    ]
+}
+
+################################################################################
+
+DELETE http://localhost:8000/api/delete-purchases-products/7d8a634e-efdd-4708-8835-e1f40b4d752d

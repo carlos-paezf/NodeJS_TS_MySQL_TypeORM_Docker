@@ -6,6 +6,10 @@ import { UserRouter } from "./user/user.router"
 import { ConfigServer } from "./config/config"
 import { ProductRouter } from "./product/product.router"
 import { DataSource } from 'typeorm';
+import { CategoryRouter } from './category/category.router';
+import { PurchaseRouter } from './purchase/purchase.router';
+import { CustomerRouter } from './customer/customer.router';
+import { PurchasesProductsRouter } from './purchase/purchases-products.router';
 
 
 /**
@@ -32,8 +36,12 @@ class ServerBootstrap extends ConfigServer {
 
     private _routers = (): express.Router[] => {
         return [
-            new UserRouter().router,
-            // new ProductRouter().router
+            new CategoryRouter().router,
+            new CustomerRouter().router,
+            new ProductRouter().router,
+            new PurchaseRouter().router,
+            new PurchasesProductsRouter().router,
+            new UserRouter().router
         ]
     }
 

@@ -2,6 +2,9 @@ import { IsNotEmpty } from "class-validator";
 import { BaseDTO } from "../../config/base.dto";
 
 
+/**
+ * @author Carlos Páez
+ */
 export class UserDTO extends BaseDTO {
     @IsNotEmpty()
     name!: string

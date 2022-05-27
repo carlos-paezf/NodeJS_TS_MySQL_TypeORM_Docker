@@ -1,0 +1,27 @@
+GET http://localhost:8000/api/categories
+
+################################################################################
+
+GET http://localhost:8000/api/categories/4171e35d-4cef-4a98-bf13-23aca6fda701
+
+################################################################################
+
+POST http://localhost:8000/api/create-category
+Content-Type: application/json
+
+{
+    "category_name": "Nueva Categoría"
+}
+
+################################################################################
+
+PUT http://localhost:8000/api/update-category/7d8a634e-efdd-4708-8835-e1f40b4d752d
+Content-Type: application/json
+
+{
+    "category_name": "Categoría Actualizada"
+}
+
+################################################################################
+
+DELETE http://localhost:8000/api/delete-category/7d8a634e-efdd-4708-8835-e1f40b4d752d
