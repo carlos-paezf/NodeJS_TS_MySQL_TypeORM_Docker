@@ -26,6 +26,9 @@ export class UserDTO extends BaseDTO {
     
     @IsNotEmpty()
     providence!: string
+
+    @IsNotEmpty()
+    role!: RoleType
 }
 
 

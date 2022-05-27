@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 import { red } from 'colors';
-import { PurchasesProductsService } from '../services/purchases-products.service';
+import { PurchaseProductService } from '../services/purchase-product.service';
 import { HttpResponse } from '../../shared/response/http.response';
 
 
 /**
  * @author Carlos Páez
  */
-export class PurchasesProductsController {
+export class PurchaseProductController {
     constructor(
-        private readonly _purchasesProductsService: PurchasesProductsService = new PurchasesProductsService(),
+        private readonly _purchasesProductsService: PurchaseProductService = new PurchaseProductService(),
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
@@ -26,11 +26,11 @@ export class PurchasesProductsController {
         }
     }
 
-    public async findPurchasesProductsById(req: Request, res: Response): Promise<unknown> {
+    public async findPurchaseProductById(req: Request, res: Response): Promise<unknown> {
         try {
             const { id } = req.params
 
-            const data = await this._purchasesProductsService.findPurchasesProductsById(id)
+            const data = await this._purchasesProductsService.findPurchaseProductById(id)
 
             if (!data) return this._httpResponse.BadRequest(res, `No hay resultados para el id '${id}'`)
 
@@ -41,9 +41,9 @@ export class PurchasesProductsController {
         }
     }
 
-    public async createPurchasesProducts(req: Request, res: Response): Promise<unknown> {
+    public async createPurchaseProduct(req: Request, res: Response): Promise<unknown> {
         try {
-            const data = await this._purchasesProductsService.createPurchasesProducts({ ...req.body })
+            const data = await this._purchasesProductsService.createPurchaseProduct({ ...req.body })
 
             return this._httpResponse.Created(res, data)
         } catch (error) {
@@ -52,11 +52,11 @@ export class PurchasesProductsController {
         }
     }
 
-    public async updatePurchasesProducts(req: Request, res: Response): Promise<unknown> {
+    public async updatePurchaseProduct(req: Request, res: Response): Promise<unknown> {
         try {
             const { id } = req.params
 
-            const data = await this._purchasesProductsService.updatePurchasesProducts(id, { ...req.body })
+            const data = await this._purchasesProductsService.updatePurchaseProduct(id, { ...req.body })
 
             if (!data.affected) return this._httpResponse.BadRequest(res, 'No se han aplicado los cambios')
 
@@ -67,11 +67,11 @@ export class PurchasesProductsController {
         }
     }
 
-    public async deletePurchasesProducts(req: Request, res: Response): Promise<unknown> {
+    public async deletePurchaseProduct(req: Request, res: Response): Promise<unknown> {
         try {
             const { id } = req.params
 
-            const data = await this._purchasesProductsService.deletePurchasesProducts(id)
+            const data = await this._purchasesProductsService.deletePurchaseProduct(id)
 
             if (!data.affected) return this._httpResponse.BadRequest(res, 'No se han aplicado los cambios')
 

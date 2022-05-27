@@ -2,7 +2,7 @@ GET http://localhost:8000/api/customers
 
 ################################################################################
 
-GET http://localhost:8000/api/customers/4171e35d-4cef-4a98-bf13-23aca6fda701
+GET http://localhost:8000/api/customers/5aab7011-f6da-4bdd-a6eb-78df5e8e0e8a
 
 ################################################################################
 
@@ -12,20 +12,20 @@ Content-Type: application/json
 {
     "address": "Nueva direccion",
     "dni": "12345678",
-    "user_id": ""
+    "user": "a9f52b1b-61d4-4fcb-9630-ff9fbac02f54"
 }
 
 ################################################################################
 
-PUT http://localhost:8000/api/update-customer/7d8a634e-efdd-4708-8835-e1f40b4d752d
+PUT http://localhost:8000/api/update-customer/fb04277f-0b32-4120-a6ba-25746c630220
 Content-Type: application/json
 
 {
-    "address": "Nueva direccion",
+    "address": "Nueva direccion actualizada",
     "dni": "12345678",
-    "user_id": ""
+    "user": "a9f52b1b-61d4-4fcb-9630-ff9fbac02f54"
 }
 
 ################################################################################
 
-DELETE http://localhost:8000/api/delete-customer/7d8a634e-efdd-4708-8835-e1f40b4d752d
+DELETE http://localhost:8000/api/delete-customer/2f72b063-f20f-4d96-a67b-10ef862b52f9

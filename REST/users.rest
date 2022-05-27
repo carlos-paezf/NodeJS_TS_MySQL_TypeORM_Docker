@@ -2,7 +2,7 @@ GET http://localhost:8000/api/users
 
 ################################################################################
 
-GET http://localhost:8000/api/user/4171e35d-4cef-4a98-bf13-23aca6fda701
+GET http://localhost:8000/api/user/a9f52b1b-61d4-4fcb-9630-ff9fbac02f54
 
 ################################################################################
 
@@ -16,12 +16,13 @@ Content-Type: application/json
     "email": "test@test.com",
     "password": "test_password",
     "city": "ciudad",
-    "providence": "provincia"
+    "providence": "provincia",
+    "role": "customer"
 }
 
 ################################################################################
 
-PUT http://localhost:8000/api/update-user/7d8a634e-efdd-4708-8835-e1f40b4d752d
+PUT http://localhost:8000/api/update-user/832685e0-1ec4-4371-9b3c-0fbb5c238ce2
 Content-Type: application/json
 
 {
@@ -31,9 +32,14 @@ Content-Type: application/json
     "email": "actualizado@actualizado.com",
     "password": "actualizado_password",
     "city": "ciudad",
-    "providence": "provincia"
+    "providence": "provincia",
+    "role": "user"
 }
 
 ################################################################################
 
-DELETE http://localhost:8000/api/delete-user/7d8a634e-efdd-4708-8835-e1f40b4d752d
+DELETE http://localhost:8000/api/delete-user/832685e0-1ec4-4371-9b3c-0fbb5c238ce2
+
+################################################################################
+
+GET http://localhost:8000/api/users/relation/a9f52b1b-61d4-4fcb-9630-ff9fbac02f54

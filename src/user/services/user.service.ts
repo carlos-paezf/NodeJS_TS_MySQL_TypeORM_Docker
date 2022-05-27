@@ -31,4 +31,12 @@ export class UserService extends BaseService<UserEntity> {
     public async deleteUser(id: string): Promise<DeleteResult> {
         return (await this.execRepository).delete({ id })
     }
+
+    public async findUserWithRelation(id: string): Promise<UserEntity | null> {
+        return (await this.execRepository)
+            .createQueryBuilder('user')
+            .leftJoinAndSelect('user.customer', 'customer')
+            .where({ id })
+            .getOne()
+    }
 }

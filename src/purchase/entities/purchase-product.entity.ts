@@ -7,7 +7,7 @@ import { PurchaseEntity } from "./purchase.entity";
 /**
  * @author Carlos Páez
  */
-@Entity({ name: 'purchases_products' })
+@Entity({ name: 'purchase_product' })
 export class PurchasesProductsEntity extends BaseEntity {
     @Column()
     quantityProduct!: number
@@ -17,9 +17,9 @@ export class PurchasesProductsEntity extends BaseEntity {
 
     @ManyToOne(() => PurchaseEntity, (purchase) => purchase.purchaseProduct)
     @JoinColumn({ name: 'purchase_id' })
-    purchases!: PurchaseEntity[]
+    purchase!: PurchaseEntity
 
     @ManyToOne(() => ProductEntity, (product) => product.purchaseProduct)
     @JoinColumn({ name: 'product_id' })
-    products!: ProductEntity[]
+    product!: ProductEntity
 }

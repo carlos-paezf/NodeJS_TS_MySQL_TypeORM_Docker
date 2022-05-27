@@ -2,7 +2,7 @@ GET http://localhost:8000/api/purchases
 
 ################################################################################
 
-GET http://localhost:8000/api/purchases/4171e35d-4cef-4a98-bf13-23aca6fda701
+GET http://localhost:8000/api/purchases/e8451502-6e3e-429a-add1-d1e9ee41fd5a
 
 ################################################################################
 
@@ -11,8 +11,8 @@ Content-Type: application/json
 
 {
     "status": "true",
-    "payment_method": "credit_card",
-    "customer_id": "4171e35d-4cef-4a98-bf13-23aca6fda701",
+    "paymentMethod": "credit_card",
+    "customer_id": "5aab7011-f6da-4bdd-a6eb-78df5e8e0e8a"
 }
 
 ################################################################################
@@ -22,8 +22,8 @@ Content-Type: application/json
 
 {
     "status": "false",
-    "payment_method": "credit_card",
-    "customer_id": "4171e35d-4cef-4a98-bf13-23aca6fda701",
+    "paymentMethod": "credit_card",
+    "customer_id": "5aab7011-f6da-4bdd-a6eb-78df5e8e0e8a"
 }
 
 ################################################################################

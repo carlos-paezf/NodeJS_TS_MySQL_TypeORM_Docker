@@ -2,7 +2,7 @@ GET http://localhost:8000/api/products
 
 ################################################################################
 
-GET http://localhost:8000/api/products/14224a2f-6978-47bf-82e1-65c1c5799443
+GET http://localhost:8000/api/products/c64cb607-60b8-496a-a9c1-7763083da011
 
 ################################################################################
 
@@ -12,8 +12,8 @@ Content-Type: application/json
 {
     "productName": "test",
     "description": "producto de prueba",
-    "price": "1000",
-    "category": ""
+    "price": 1000,
+    "category": "f5aa1cef-f889-43cc-bb22-c3828aea654e"
 }
 
 ################################################################################
@@ -24,8 +24,8 @@ Content-Type: application/json
 {
     "productName": "actualizado",
     "description": "producto de prueba",
-    "price": "1000",
-    "category": ""
+    "price": 1000,
+    "category": "f5aa1cef-f889-43cc-bb22-c3828aea654e"
 }
 
 ################################################################################

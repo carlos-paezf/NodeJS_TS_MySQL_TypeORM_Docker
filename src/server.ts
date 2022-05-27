@@ -10,7 +10,7 @@ import { DataSource } from 'typeorm';
 import { CategoryRouter } from './category/category.router';
 import { PurchaseRouter } from './purchase/purchase.router';
 import { CustomerRouter } from './customer/customer.router';
-import { PurchasesProductsRouter } from './purchase/purchases-products.router';
+import { PurchaseProductRouter } from './purchase/purchase-product.router';
 
 
 /**
@@ -41,7 +41,7 @@ class ServerBootstrap extends ConfigServer {
             new CustomerRouter().router,
             new ProductRouter().router,
             new PurchaseRouter().router,
-            new PurchasesProductsRouter().router,
+            new PurchaseProductRouter().router,
             new UserRouter().router
         ]
     }

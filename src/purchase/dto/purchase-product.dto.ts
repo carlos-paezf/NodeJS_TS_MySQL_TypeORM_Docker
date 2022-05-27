@@ -7,7 +7,7 @@ import { ProductEntity } from '../../product/entities/product.entity';
 /**
  * @author Carlos Páez
  */
-export class PurchasesProductsDTO extends BaseDTO {
+export class PurchaseProductDTO extends BaseDTO {
     @IsNotEmpty()
     quantityProduct!: number
 

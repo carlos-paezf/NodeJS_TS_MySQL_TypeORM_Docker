@@ -70,7 +70,21 @@ export class UserController {
             const { id } = req.params
             const data: DeleteResult = await this._userService.deleteUser(id)
 
-            if (!data.affected) return this._httpResponse.BadRequest(res, `No se logro eliminar el id ${id}`)
+            if (!data.affected) return this._httpResponse.BadRequest(res, `No se logro eliminar el id '${id}'`)
+
+            return this._httpResponse.Ok(res, data)
+        } catch (error) {
+            console.log(red('Error in UserController: '), error)
+            return this._httpResponse.InternalServerError(res, error)
+        }
+    }
+
+    public async getUserWithRelation(req: Request, res: Response): Promise<unknown> {
+        try {
+            const { id } = req.params
+            const data = await this._userService.findUserWithRelation(id)
+
+            if (!data) return this._httpResponse.BadRequest(res, `No hay ningún elemento con el id '${id}'`)
 
             return this._httpResponse.Ok(res, data)
         } catch (error) {

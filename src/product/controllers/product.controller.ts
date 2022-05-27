@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
-import { ProductService } from "../services/product.service";
+import { Request, Response } from 'express';
 import { red } from 'colors';
-import { HttpResponse } from "../../shared/response/http.response";
+import { ProductService } from '../services/product.service';
+import { HttpResponse } from '../../shared/response/http.response';
 
 
 /**
@@ -17,6 +17,8 @@ export class ProductController {
         try {
             const data = await this._productService.findAllProducts()
 
+            if (!data.length) return this._httpResponse.NotFound(res, 'No hay resultados')
+
             return this._httpResponse.Ok(res, data)
         } catch (error) {
             console.log(red('Error in ProductController: '), error)
@@ -29,6 +31,8 @@ export class ProductController {
             const { id } = req.params
 
             const data = await this._productService.findProductById(id)
+
+            if (!data || data === null) return this._httpResponse.BadRequest(res, `No hay resultados para el id '${id}'`)
 
             return this._httpResponse.Ok(res, data)
         } catch (error) {
@@ -54,6 +58,8 @@ export class ProductController {
 
             const data = await this._productService.updateProduct(id, { ...req.body })
 
+            if (!data.affected) return this._httpResponse.BadRequest(res, 'No se han aplicado los cambios')
+
             return this._httpResponse.Ok(res, data)
         } catch (error) {
             console.log(red('Error in ProductController: '), error)
@@ -67,9 +73,11 @@ export class ProductController {
 
             const data = await this._productService.deleteProduct(id)
 
+            if (!data.affected) return this._httpResponse.BadRequest(res, 'No se han aplicado los cambios')
+
             return this._httpResponse.Ok(res, data)
         } catch (error) {
-            console.log(red('Error in ProductService: '), error)
+            console.log(red('Error in ProductController: '), error)
             return this._httpResponse.InternalServerError(res, error)
         }
     }

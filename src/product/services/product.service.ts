@@ -9,7 +9,7 @@ import { UpdateResult, DeleteResult } from 'typeorm';
  */
 export class ProductService extends BaseService<ProductEntity> {
     constructor() {
-        super(ProductService)
+        super(ProductEntity)
     }
 
     public async findAllProducts(): Promise<ProductEntity[]> {
@@ -17,7 +17,7 @@ export class ProductService extends BaseService<ProductEntity> {
     }
 
     public async findProductById(id: string): Promise<ProductEntity | null> {
-        return (await this.execRepository).findOneByOrFail({ id })
+        return (await this.execRepository).findOneBy({ id })
     }
 
     public async createProduct(body: ProductDTO): Promise<ProductEntity> {

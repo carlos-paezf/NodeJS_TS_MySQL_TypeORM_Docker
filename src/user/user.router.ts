@@ -16,5 +16,6 @@ export class UserRouter extends BaseRouter<UserController> {
         this.router.post('/create-user', (req: Request, res: Response) => this.controller.createUser(req, res))
         this.router.put('/update-user/:id', (req: Request, res: Response) => this.controller.updateUser(req, res))
         this.router.delete('/delete-user/:id', (req: Request, res: Response) => this.controller.deleteUser(req, res))
+        this.router.get('/users/relation/:id', (req: Request, res: Response) => this.controller.getUserWithRelation(req, res))
     }
 }
