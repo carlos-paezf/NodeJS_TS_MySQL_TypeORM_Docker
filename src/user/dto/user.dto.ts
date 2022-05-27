@@ -27,3 +27,10 @@ export class UserDTO extends BaseDTO {
     @IsNotEmpty()
     providence!: string
 }
+
+
+export enum RoleType {
+    USER = 'USER',
+    CUSTOMER = 'CUSTOMER',
+    ADMIN = 'ADMIN'
+}

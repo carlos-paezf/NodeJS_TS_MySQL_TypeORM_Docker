@@ -13,7 +13,7 @@ export class ProductController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async getAllProducts(req: Request, res: Response): Promise<unknown> {
+    public async findAllProducts(req: Request, res: Response): Promise<unknown> {
         try {
             const data = await this._productService.findAllProducts()
 
@@ -24,7 +24,7 @@ export class ProductController {
         }
     }
 
-    public async getProductById(req: Request, res: Response): Promise<unknown> {
+    public async findProductById(req: Request, res: Response): Promise<unknown> {
         try {
             const { id } = req.params
 

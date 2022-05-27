@@ -35,3 +35,4 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 - [Implementación de Servicios](DOC/P6T1_Implementacion_Servicios.md "P6T1")
 - [Manejo de Errores y Respuestas](DOC/P7T1_Manejo_Errores_Respuestas.md "P7T1")
 - [TypeORM 0.3.6 (Latest Version)](DOC/P8T1_TypeOrm_0.3.6.md "P8T1")
+- [Configurando Migraciones con TypeORM 0.3.6](DOC/P8T2_TypeOrm_0.3.6.md "P8T2")

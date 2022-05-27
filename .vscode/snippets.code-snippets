@@ -286,5 +286,39 @@
 			],
 			"description": "Router Class TypeORM"
 		}
-	]
+	],
+	"REST": {
+		"scope": "rest,http",
+		"prefix": "REST API",
+		"body": [
+			"GET http://localhost:8000/api/${1:BasePlural}",
+			"",
+			"################################################################################",
+			"",
+			"GET http://localhost:8000/api/${1:BasePlural}/${ID}",
+			"",
+			"################################################################################",
+			"",
+			"POST http://localhost:8000/api/create-${2:BaseSingular}",
+			"Content-Type: application/json",
+			"",
+			"{",
+			"\t\"${3:Key}\": \"${4:Value}\"",
+			"}",
+			"",
+			"################################################################################",
+			"",
+			"PUT http://localhost:8000/api/update-${2:BaseSingular}/${ID}",
+			"Content-Type: application/json",
+			"",
+			"{",
+			"\t\"${3:Key}\": \"${4:Value}\"",
+			"}",
+			"",
+			"################################################################################",
+			"",
+			"DELETE http://localhost:8000/api/delete-${2:BaseSingular}/${ID}"
+		],
+		"description": "REST API (GET, POST, PUT, DELETE)"
+	}
 }
