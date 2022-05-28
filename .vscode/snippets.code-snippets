@@ -285,6 +285,34 @@
 				"}",
 			],
 			"description": "Router Class TypeORM"
+		},
+		{
+			"scope": "typescript",
+			"prefix": "Middleware Class TypeORM",
+			"body": [
+				"import { validate } from 'class-validator'"
+				"import { NextFunction, Request, Response } from 'express'",
+				"\n",
+				"/**",
+				" * @author Carlos Páez",
+				" */",
+				"export class ${1:Class}Middleware {",
+				"\tconstructor(private readonly _httpResponse: HttpResponse = new HttpResponse()) { }",
+				"",
+				"\t${2:entity}Validator(req: Request, res: Response, next: NextFunction) {",
+				"\t\tconst { ${3:values} } = req.body",
+				"",
+				"\t\tconst valid = new ${1:Class}DTO()",
+				"",
+				"\t\tvalid.${4:property} = ${4:property}",
+				"",
+				"\t\tvalidate(valid).then((error) => {",
+				"\t\t\treturn error.length ? this._httpResponse.BadRequest(res, error) : next()",
+				"\t\t})",
+				"\t}",
+				"}"
+			],
+			"description": "Middleware Class TypeORM"
 		}
 	],
 	"REST": {
