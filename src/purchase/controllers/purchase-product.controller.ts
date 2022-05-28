@@ -13,7 +13,7 @@ export class PurchaseProductController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async findAllPurchasesProducts(req: Request, res: Response): Promise<unknown> {
+    public findAllPurchasesProducts = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._purchasesProductsService.findAllPurchasesProducts()
 
@@ -26,7 +26,7 @@ export class PurchaseProductController {
         }
     }
 
-    public async findPurchaseProductById(req: Request, res: Response): Promise<unknown> {
+    public findPurchaseProductById = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -41,7 +41,7 @@ export class PurchaseProductController {
         }
     }
 
-    public async createPurchaseProduct(req: Request, res: Response): Promise<unknown> {
+    public createPurchaseProduct = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._purchasesProductsService.createPurchaseProduct({ ...req.body })
 
@@ -52,7 +52,7 @@ export class PurchaseProductController {
         }
     }
 
-    public async updatePurchaseProduct(req: Request, res: Response): Promise<unknown> {
+    public updatePurchaseProduct = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -67,7 +67,7 @@ export class PurchaseProductController {
         }
     }
 
-    public async deletePurchaseProduct(req: Request, res: Response): Promise<unknown> {
+    public deletePurchaseProduct = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 

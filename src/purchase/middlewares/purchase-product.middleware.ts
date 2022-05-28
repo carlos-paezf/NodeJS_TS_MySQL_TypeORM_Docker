@@ -10,7 +10,7 @@ import { PurchaseProductDTO } from '../dto/purchase-product.dto'
 export class PurchaseProductMiddleware {
     constructor(private readonly _httpResponse: HttpResponse = new HttpResponse()) { }
 
-    purchaseProductValidator(req: Request, res: Response, next: NextFunction) {
+    public purchaseProductValidator = (req: Request, res: Response, next: NextFunction) => {
         const { quantityProduct, totalPrice, purchase, product } = req.body
 
         const valid = new PurchaseProductDTO()

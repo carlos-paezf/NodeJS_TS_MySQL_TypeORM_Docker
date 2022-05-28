@@ -10,12 +10,12 @@ POST http://localhost:8000/api/create-category
 Content-Type: application/json
 
 {
-    "categoryName": "Categoría 1"
+    "categoryName": "Categoría 2"
 }
 
 ################################################################################
 
-PUT http://localhost:8000/api/update-category/349b417c-3870-4d01-b28b-a97271090b0d
+PUT http://localhost:8000/api/update-category/604835c2-c8fb-4bd4-af54-d5f0f525f8e2
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 ################################################################################
 
-DELETE http://localhost:8000/api/delete-category/349b417c-3870-4d01-b28b-a97271090b0d
+DELETE http://localhost:8000/api/delete-category/604835c2-c8fb-4bd4-af54-d5f0f525f8e2

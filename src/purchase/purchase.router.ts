@@ -13,14 +13,14 @@ export class PurchaseRouter extends BaseRouter<PurchaseController, PurchaseMiddl
     }
 
     protected routes(): void {
-        this.router.get('/purchases', (req: Request, res: Response) => this.controller.findAllPurchases(req, res))
-        this.router.get('/purchases/:id', (req: Request, res: Response) => this.controller.findPurchaseById(req, res))
+        this.router.get('/purchases', this.controller.findAllPurchases)
+        this.router.get('/purchases/:id', this.controller.findPurchaseById)
         this.router.post(
             '/create-purchase', 
-            (req: Request, res: Response, next: NextFunction) => this.middleware.purchaseValidator(req, res, next),
-            (req: Request, res: Response) => this.controller.createPurchase(req, res)
+            this.middleware.purchaseValidator,
+            this.controller.createPurchase
         )
-        this.router.put('/update-purchase/:id', (req: Request, res: Response) => this.controller.updatePurchase(req, res))
-        this.router.delete('/delete-purchase/:id', (req: Request, res: Response) => this.controller.deletePurchase(req, res))
+        this.router.put('/update-purchase/:id', this.controller.updatePurchase)
+        this.router.delete('/delete-purchase/:id', this.controller.deletePurchase)
     }
 }

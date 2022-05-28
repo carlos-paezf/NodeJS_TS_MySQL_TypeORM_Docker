@@ -10,7 +10,7 @@ import { CategoryDTO } from '../dto/category.dto'
 export class CategoryMiddleware {
     constructor(private readonly _httpResponse: HttpResponse = new HttpResponse()) { }
 
-    categoryValidator(req: Request, res: Response, next: NextFunction) {
+    public categoryValidator = (req: Request, res: Response, next: NextFunction) => {
         const { categoryName } = req.body
 
         const valid = new CategoryDTO()

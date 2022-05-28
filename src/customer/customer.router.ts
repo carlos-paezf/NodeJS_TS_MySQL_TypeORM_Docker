@@ -13,14 +13,14 @@ export class CustomerRouter extends BaseRouter<CustomerController, CustomerMiddl
     }
 
     protected routes(): void {
-        this.router.get('/customers', (req: Request, res: Response) => this.controller.findAllCustomers(req, res))
-        this.router.get('/customers/:id', (req: Request, res: Response) => this.controller.findCustomerById(req, res))
+        this.router.get('/customers', this.controller.findAllCustomers)
+        this.router.get('/customers/:id', this.controller.findCustomerById)
         this.router.post(
             '/create-customer', 
-            (req: Request, res: Response, next: NextFunction) => this.middleware.customerValidator(req, res, next),
-            (req: Request, res: Response) => this.controller.createCustomer(req, res)
+            this.middleware.customerValidator,
+            this.controller.createCustomer
         )
-        this.router.put('/update-customer/:id', (req: Request, res: Response) => this.controller.updateCustomer(req, res))
-        this.router.delete('/delete-customer/:id', (req: Request, res: Response) => this.controller.deleteCustomer(req, res))
+        this.router.put('/update-customer/:id', this.controller.updateCustomer)
+        this.router.delete('/delete-customer/:id', this.controller.deleteCustomer)
     }
 }

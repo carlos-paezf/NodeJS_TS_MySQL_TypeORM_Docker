@@ -13,7 +13,7 @@ export class PurchaseController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async findAllPurchases(req: Request, res: Response): Promise<unknown> {
+    public findAllPurchases = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._purchaseService.findAllPurchases()
 
@@ -26,7 +26,7 @@ export class PurchaseController {
         }
     }
 
-    public async findPurchaseById(req: Request, res: Response): Promise<unknown> {
+    public findPurchaseById = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -41,7 +41,7 @@ export class PurchaseController {
         }
     }
 
-    public async createPurchase(req: Request, res: Response): Promise<unknown> {
+    public createPurchase = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._purchaseService.createPurchase({ ...req.body })
 
@@ -52,7 +52,7 @@ export class PurchaseController {
         }
     }
 
-    public async updatePurchase(req: Request, res: Response): Promise<unknown> {
+    public updatePurchase = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -67,7 +67,7 @@ export class PurchaseController {
         }
     }
 
-    public async deletePurchase(req: Request, res: Response): Promise<unknown> {
+    public deletePurchase = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 

@@ -12,20 +12,20 @@ Content-Type: application/json
 {
     "address": "Nueva direccion",
     "dni": "12345678",
-    "user": "a9f52b1b-61d4-4fcb-9630-ff9fbac02f54"
+    "user": "4e2f5bc8-bd74-4fa3-b6c7-d523c5127182"
 }
 
 ################################################################################
 
-PUT http://localhost:8000/api/update-customer/fb04277f-0b32-4120-a6ba-25746c630220
+PUT http://localhost:8000/api/update-customer/62b1762b-d83c-4e98-84fc-99214519f84b
 Content-Type: application/json
 
 {
     "address": "Nueva direccion actualizada",
     "dni": "12345678",
-    "user": "a9f52b1b-61d4-4fcb-9630-ff9fbac02f54"
+    "user": "4e2f5bc8-bd74-4fa3-b6c7-d523c5127182"
 }
 
 ################################################################################
 
-DELETE http://localhost:8000/api/delete-customer/2f72b063-f20f-4d96-a67b-10ef862b52f9
+DELETE http://localhost:8000/api/delete-customer/62b1762b-d83c-4e98-84fc-99214519f84b

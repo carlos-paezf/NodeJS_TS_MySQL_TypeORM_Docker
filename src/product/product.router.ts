@@ -13,14 +13,14 @@ export class ProductRouter extends BaseRouter<ProductController, ProductMiddlewa
     }
 
     protected routes(): void {
-        this.router.get('/products', (req: Request, res: Response) => this.controller.findAllProducts(req, res))
-        this.router.get('/products/:id', (req: Request, res: Response) => this.controller.findProductById(req, res))
+        this.router.get('/products', this.controller.findAllProducts)
+        this.router.get('/products/:id', this.controller.findProductById)
         this.router.post(
             '/create-product',
-            (req: Request, res: Response, next: NextFunction) => this.middleware.productValidator(req, res, next),
-            (req: Request, res: Response) => this.controller.createProduct(req, res)
+            this.middleware.productValidator,
+            this.controller.createProduct
         )
-        this.router.put('/update-product/:id', (req: Request, res: Response) => this.controller.updateProduct(req, res))
-        this.router.delete('/delete-product/:id', (req: Request, res: Response) => this.controller.deleteProduct(req, res))
+        this.router.put('/update-product/:id', this.controller.updateProduct)
+        this.router.delete('/delete-product/:id', this.controller.deleteProduct)
     }
 }

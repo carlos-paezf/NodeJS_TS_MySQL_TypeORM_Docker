@@ -13,14 +13,14 @@ export class CategoryRouter extends BaseRouter<CategoryController, CategoryMiddl
     }
 
     protected routes(): void {
-        this.router.get('/categories', (req: Request, res: Response) => this.controller.findAllCategories(req, res))
-        this.router.get('/categories/:id', (req: Request, res: Response) => this.controller.findCategoryById(req, res))
+        this.router.get('/categories', this.controller.findAllCategories)
+        this.router.get('/categories/:id', this.controller.findCategoryById)
         this.router.post(
             '/create-category',
-            (req: Request, res: Response, next: NextFunction) => this.middleware.categoryValidator(req, res, next),
-            (req: Request, res: Response) => this.controller.createCategory(req, res)
+            this.middleware.categoryValidator,
+            this.controller.createCategory
         )
-        this.router.put('/update-category/:id', (req: Request, res: Response) => this.controller.updateCategory(req, res))
-        this.router.delete('/delete-category/:id', (req: Request, res: Response) => this.controller.deleteCategory(req, res))
+        this.router.put('/update-category/:id', this.controller.updateCategory)
+        this.router.delete('/delete-category/:id', this.controller.deleteCategory)
     }
 }

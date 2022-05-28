@@ -13,7 +13,7 @@ export class CustomerController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async findAllCustomers(req: Request, res: Response): Promise<unknown> {
+    public findAllCustomers = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._customerService.findAllCustomers()
 
@@ -26,7 +26,7 @@ export class CustomerController {
         }
     }
 
-    public async findCustomerById(req: Request, res: Response): Promise<unknown> {
+    public findCustomerById = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -41,7 +41,7 @@ export class CustomerController {
         }
     }
 
-    public async createCustomer(req: Request, res: Response): Promise<unknown> {
+    public createCustomer = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._customerService.createCustomer({ ...req.body })
 
@@ -52,7 +52,7 @@ export class CustomerController {
         }
     }
 
-    public async updateCustomer(req: Request, res: Response): Promise<unknown> {
+    public updateCustomer = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -67,7 +67,7 @@ export class CustomerController {
         }
     }
 
-    public async deleteCustomer(req: Request, res: Response): Promise<unknown> {
+    public deleteCustomer = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 

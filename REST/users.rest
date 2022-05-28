@@ -10,19 +10,19 @@ POST http://localhost:8000/api/create-user
 Content-Type: application/json
 
 {
-    "name": "test",
-    "lastname": "test",
-    "username": "test",
-    "email": "test@test.com",
-    "password": "test_password",
+    "name": "test2",
+    "lastname": "test2",
+    "username": "test2",
+    "email": "test2@test2.com",
+    "password": "test2_password",
     "city": "ciudad",
     "providence": "provincia",
-    "role": "customer"
+    "role": "user"
 }
 
 ################################################################################
 
-PUT http://localhost:8000/api/update-user/832685e0-1ec4-4371-9b3c-0fbb5c238ce2
+PUT http://localhost:8000/api/update-user/6f56b3be-1510-40e4-bee4-b9a799c460e6
 Content-Type: application/json
 
 {
@@ -38,8 +38,8 @@ Content-Type: application/json
 
 ################################################################################
 
-DELETE http://localhost:8000/api/delete-user/832685e0-1ec4-4371-9b3c-0fbb5c238ce2
+DELETE http://localhost:8000/api/delete-user/6f56b3be-1510-40e4-bee4-b9a799c460e6
 
 ################################################################################
 
-GET http://localhost:8000/api/users/relation/a9f52b1b-61d4-4fcb-9630-ff9fbac02f54
+GET http://localhost:8000/api/users/relation/8547d5c5-c5ee-4588-995f-f7e27f7cf3b6

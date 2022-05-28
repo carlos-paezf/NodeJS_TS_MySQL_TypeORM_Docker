@@ -74,6 +74,26 @@ export class UserRouter extends BaseRouter<UserController, UserMiddleware> {
 
 Debemos hacer lo mismo para las demás entidades.
 
+> Por cuestiones de optimización de código, he decidido convertir los métodos de los controladores y middlewares en funciones de flecha, esto con el fin de poder pasar por referencia las funciones dentro de la configuración de las rutas. Por ejemplo:
+>
+> ```ts
+> export class UserRouter extends BaseRouter<UserController, UserMiddleware> {
+>     ...
+>     protected routes(): void {
+>         this.router.get('/users', this.controller.findAllUsers)
+>         this.router.get('/user/:id', this.controller.findUserById)
+>         this.router.post(
+>             '/create-user', 
+>             this.middleware.userValidator, 
+>             this.controller.createUser
+>         )
+>         this.router.put('/update-user/:id', this.controller.updateUser)
+>         this.router.delete('/delete-user/:id', this.controller.deleteUser)
+>         this.router.get('/users/relation/:id', this.controller.getUserWithRelation)
+>     }
+> }
+> ```
+
 | Anterior                                                        |                        | Siguiente |
 | --------------------------------------------------------------- | ---------------------- | --------- |
 | [Relaciones con Servicios y Controladores](P9T1_Relaciones_Servicios_Controladores.md) | [Readme](../README.md) | [Password Hashing y Query Builders](P11T1_Password_Hashing_Query_Builders.md) |

@@ -10,7 +10,7 @@ import { ProductDTO } from '../dto/product.dto'
 export class ProductMiddleware {
     constructor(private readonly _httpResponse: HttpResponse = new HttpResponse()) { }
 
-    productValidator(req: Request, res: Response, next: NextFunction) {
+    public productValidator = (req: Request, res: Response, next: NextFunction) => {
         const { productName, description, price, category } = req.body
 
         const valid = new ProductDTO()

@@ -13,14 +13,14 @@ export class PurchaseProductRouter extends BaseRouter<PurchaseProductController,
     }
 
     protected routes(): void {
-        this.router.get('/purchases-products', (req: Request, res: Response) => this.controller.findAllPurchasesProducts(req, res))
-        this.router.get('/purchases-products/:id', (req: Request, res: Response) => this.controller.findPurchaseProductById(req, res))
+        this.router.get('/purchases-products', this.controller.findAllPurchasesProducts)
+        this.router.get('/purchases-products/:id', this.controller.findPurchaseProductById)
         this.router.post(
             '/create-purchase-product', 
-            (req: Request, res: Response, next: NextFunction) => this.middleware.purchaseProductValidator(req, res, next),
-            (req: Request, res: Response) => this.controller.createPurchaseProduct(req, res)
+            this.middleware.purchaseProductValidator,
+            this.controller.createPurchaseProduct
         )
-        this.router.put('/update-purchase-product/:id', (req: Request, res: Response) => this.controller.updatePurchaseProduct(req, res))
-        this.router.delete('/delete-purchase-product/:id', (req: Request, res: Response) => this.controller.deletePurchaseProduct(req, res))
+        this.router.put('/update-purchase-product/:id', this.controller.updatePurchaseProduct)
+        this.router.delete('/delete-purchase-product/:id', this.controller.deletePurchaseProduct)
     }
 }

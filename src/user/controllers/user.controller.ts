@@ -14,7 +14,7 @@ export class UserController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async getAllUsers(req: Request, res: Response): Promise<unknown> {
+    public findAllUsers = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._userService.findAllUsers()
             
@@ -26,7 +26,7 @@ export class UserController {
         }
     }
 
-    public async getUserById(req: Request, res: Response): Promise<unknown> {
+    public findUserById = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
             const data = await this._userService.findUserById(id)
@@ -40,7 +40,7 @@ export class UserController {
         }
     }
 
-    public async createUser(req: Request, res: Response): Promise<unknown> {
+    public createUser = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._userService.createUser({ ...req.body })
 
@@ -51,7 +51,7 @@ export class UserController {
         }
     }
 
-    public async updateUser(req: Request, res: Response): Promise<unknown> {
+    public updateUser = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
             const data: UpdateResult = await this._userService.updateUser(id, { ...req.body })
@@ -65,7 +65,7 @@ export class UserController {
         }
     }
 
-    public async deleteUser(req: Request, res: Response): Promise<unknown> {
+    public deleteUser = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
             const data: DeleteResult = await this._userService.deleteUser(id)
@@ -79,7 +79,7 @@ export class UserController {
         }
     }
 
-    public async getUserWithRelation(req: Request, res: Response): Promise<unknown> {
+    public getUserWithRelation = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
             const data = await this._userService.findUserWithRelation(id)

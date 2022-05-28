@@ -13,7 +13,7 @@ export class CategoryController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async findAllCategories(req: Request, res: Response): Promise<unknown> {
+    public findAllCategories = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._categoryService.findAllCategories()
 
@@ -26,7 +26,7 @@ export class CategoryController {
         }
     }
 
-    public async findCategoryById(req: Request, res: Response): Promise<unknown> {
+    public findCategoryById = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -41,7 +41,7 @@ export class CategoryController {
         }
     }
 
-    public async createCategory(req: Request, res: Response): Promise<unknown> {
+    public createCategory = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._categoryService.createCategory({ ...req.body })
 
@@ -52,7 +52,7 @@ export class CategoryController {
         }
     }
 
-    public async updateCategory(req: Request, res: Response): Promise<unknown> {
+    public updateCategory = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -67,7 +67,7 @@ export class CategoryController {
         }
     }
 
-    public async deleteCategory(req: Request, res: Response): Promise<unknown> {
+    public deleteCategory = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 

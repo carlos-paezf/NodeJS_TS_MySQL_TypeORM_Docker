@@ -13,7 +13,7 @@ export class ProductController {
         private readonly _httpResponse: HttpResponse = new HttpResponse()
     ) { }
 
-    public async findAllProducts(req: Request, res: Response): Promise<unknown> {
+    public findAllProducts = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._productService.findAllProducts()
 
@@ -26,7 +26,7 @@ export class ProductController {
         }
     }
 
-    public async findProductById(req: Request, res: Response): Promise<unknown> {
+    public findProductById = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -41,7 +41,7 @@ export class ProductController {
         }
     }
 
-    public async createProduct(req: Request, res: Response): Promise<unknown> {
+    public createProduct = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const data = await this._productService.createProduct({ ...req.body })
 
@@ -52,7 +52,7 @@ export class ProductController {
         }
     }
 
-    public async updateProduct(req: Request, res: Response): Promise<unknown> {
+    public updateProduct = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
@@ -67,7 +67,7 @@ export class ProductController {
         }
     }
 
-    public async deleteProduct(req: Request, res: Response): Promise<unknown> {
+    public deleteProduct = async (req: Request, res: Response): Promise<unknown> => {
         try {
             const { id } = req.params
 
