@@ -1,3 +1,4 @@
+import { hash } from "bcrypt";
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
 import { UserDTO } from "../dto/user.dto";
@@ -21,7 +22,10 @@ export class UserService extends BaseService<UserEntity> {
     }
 
     public async createUser(body: UserDTO): Promise<UserEntity> {
-        return (await this.execRepository).save(body)
+        const newUser = (await this.execRepository).create(body)
+        const passwordHash = await hash(newUser.password, 10)
+        newUser.password = passwordHash
+        return (await this.execRepository).save(newUser)
     }
 
     public async updateUser(id: string, infoUpdate: UserDTO): Promise<UpdateResult> {
@@ -37,6 +41,22 @@ export class UserService extends BaseService<UserEntity> {
             .createQueryBuilder('user')
             .leftJoinAndSelect('user.customer', 'customer')
             .where({ id })
+            .getOne()
+    }
+
+    public async findUserByEmail(email: string): Promise<UserEntity | null> {
+        return (await this.execRepository)
+            .createQueryBuilder('user')
+            .addSelect('user.password')
+            .where({ email })
+            .getOne()
+    }
+
+    public async findUserByUsername(username: string): Promise<UserEntity | null> {
+        return (await this.execRepository)
+            .createQueryBuilder('user')
+            .addSelect('user.password')
+            .where({ username })
             .getOne()
     }
 }
