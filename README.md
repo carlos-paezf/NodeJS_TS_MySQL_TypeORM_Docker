@@ -39,3 +39,4 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 - [Relaciones con Servicios y Controladores](DOC/P9T1_Relaciones_Servicios_Controladores.md "P9T1")
 - [Middleware de Validación de Datos](DOC/P10T1_Middleware_Validacion_Datos.md "P10T1")
 - [Password Hashing y Query Builders - Parte 1](DOC/P11T1_Password_Hashing_Query_Builders.md "P11T1")
+- [Servicio de Autenticación - Parte 2](DOC/P11T2_Servicio_Autenticacion.md "P11T2")

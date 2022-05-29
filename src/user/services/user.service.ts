@@ -1,7 +1,7 @@
 import { hash } from "bcrypt";
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
-import { UserDTO } from "../dto/user.dto";
+import { RoleType, UserDTO } from "../dto/user.dto";
 import { UserEntity } from "../entities/user.entity";
 
 
@@ -58,5 +58,9 @@ export class UserService extends BaseService<UserEntity> {
             .addSelect('user.password')
             .where({ username })
             .getOne()
+    }
+
+    public async findUserWithRole(id: string, role: RoleType): Promise<UserEntity | null> {
+        return (await this.execRepository).findOneBy({ id, role })
     }
 }
