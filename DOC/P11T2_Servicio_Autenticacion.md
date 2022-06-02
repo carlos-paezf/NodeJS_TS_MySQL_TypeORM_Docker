@@ -100,4 +100,4 @@ export class AuthService extends ConfigServer {
 
 | Anterior                                                                                |                        | Siguiente |
 | --------------------------------------------------------------------------------------- | ---------------------- | --------- |
-| [Password Hashing y Query Builders - Parte 1](P11T1_Password_Hashing_Query_Builders.md) | [Readme](../README.md) |           |
+| [Password Hashing y Query Builders - Parte 1](P11T1_Password_Hashing_Query_Builders.md) | [Readme](../README.md) | [Passport Local y JWT - Parte 3](P11T3_Passport_Local_JWT.md) |
