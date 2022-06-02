@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken'
 import { ConfigServer } from "../../config/config"
 import { UserEntity } from '../../user/entities/user.entity'
 import { UserService } from "../../user/services/user.service"
-import { PayloadToken } from '../interfaces/auth.inteface'
+import { PayloadToken } from '../interfaces/auth.interface'
 
 
 /**

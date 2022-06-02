@@ -11,6 +11,8 @@ import { CategoryRouter } from './category/category.router';
 import { PurchaseRouter } from './purchase/purchase.router';
 import { CustomerRouter } from './customer/customer.router';
 import { PurchaseProductRouter } from './purchase/purchase-product.router';
+import { LoginStrategy } from './auth/strategies/login.strategy';
+import { JWTStrategy } from './auth/strategies/jwt.strategy';
 
 
 /**
@@ -27,6 +29,8 @@ class ServerBootstrap extends ConfigServer {
         this._app.use(express.urlencoded({ extended: true }))
         this._app.use(morgan('dev'))
         this._app.use(cors())
+        
+        this._passportUse()
 
         this._dbConnect()
 
@@ -43,6 +47,13 @@ class ServerBootstrap extends ConfigServer {
             new PurchaseRouter().router,
             new PurchaseProductRouter().router,
             new UserRouter().router
+        ]
+    }
+
+    private _passportUse() {
+        return [
+            new LoginStrategy().use,
+            new JWTStrategy().use
         ]
     }
 

@@ -40,3 +40,4 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 - [Middleware de Validación de Datos](DOC/P10T1_Middleware_Validacion_Datos.md "P10T1")
 - [Password Hashing y Query Builders - Parte 1](DOC/P11T1_Password_Hashing_Query_Builders.md "P11T1")
 - [Servicio de Autenticación - Parte 2](DOC/P11T2_Servicio_Autenticacion.md "P11T2")
+- [Passport Local y JWT - Parte 3](DOC/P11T3_Passport_Local_JWT.md "P11T3")
