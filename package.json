@@ -16,7 +16,7 @@
     "author": "https://github.com/carlos-paezf",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/carlos-paezf"
+        "url": "git+https://github.com/carlos-paezf/NodeJS_TS_MySQL_TypeORM_Docker"
     },
     "license": "ISC",
     "dependencies": {
