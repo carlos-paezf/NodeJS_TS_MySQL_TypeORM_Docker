@@ -126,4 +126,4 @@ class ServerBootstrap extends ConfigServer {
 
 | Anterior                                                     |                        | Siguiente |
 | ------------------------------------------------------------ | ---------------------- | --------- |
-| [Servicio de Autenticación](P11T2_Servicio_Autenticacion.md) | [Readme](../README.md) | [Creación y Autenticación de Usuarios](P11T4_Creacion_Autenticacion_Usuarios.md) |
+| [Servicio de Autenticación - Parte 2](P11T2_Servicio_Autenticacion.md) | [Readme](../README.md) | [Creación y Autenticación de Usuarios - Parte 4](P11T4_Creacion_Autenticacion_Usuarios.md) |
