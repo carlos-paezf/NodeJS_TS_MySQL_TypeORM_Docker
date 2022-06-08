@@ -13,6 +13,7 @@ import { CustomerRouter } from './customer/customer.router';
 import { PurchaseProductRouter } from './purchase/purchase-product.router';
 import { LoginStrategy } from './auth/strategies/login.strategy';
 import { JWTStrategy } from './auth/strategies/jwt.strategy';
+import { AuthRouter } from './auth/auth.router';
 
 
 /**
@@ -41,11 +42,12 @@ class ServerBootstrap extends ConfigServer {
 
     private _routers = (): express.Router[] => {
         return [
+            new AuthRouter().router,
             new CategoryRouter().router,
             new CustomerRouter().router,
             new ProductRouter().router,
-            new PurchaseRouter().router,
             new PurchaseProductRouter().router,
+            new PurchaseRouter().router,
             new UserRouter().router
         ]
     }

@@ -21,11 +21,11 @@ export class AuthService extends ConfigServer {
 
         if (userByUsername) {
             const isMatch = await compare(password, userByUsername.password)
-            isMatch && userByUsername
+            if (isMatch) return userByUsername
         }
         if (userByEmail) {
             const isMatch = await compare(password, userByEmail.password)
-            isMatch && userByEmail
+            if (isMatch) return userByEmail
         }
 
         return null

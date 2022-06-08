@@ -14,13 +14,25 @@ export class UserRouter extends BaseRouter<UserController, UserMiddleware> {
     protected routes(): void {
         this.router.get('/users', this.controller.findAllUsers)
         this.router.get('/user/:id', this.controller.findUserById)
+
         this.router.post(
-            '/create-user', 
+            '/create-user',
+            this.middleware.userValidator,
+            this.controller.createUser
+        )
+        this.router.post(
+            '/register', 
             this.middleware.userValidator, 
             this.controller.createUser
         )
+
         this.router.put('/update-user/:id', this.controller.updateUser)
-        this.router.delete('/delete-user/:id', this.controller.deleteUser)
+        this.router.delete(
+            '/delete-user/:id', 
+            [this.middleware.passAuth('jwt'), this.middleware.checkAdminRole], 
+            this.controller.deleteUser
+        )
+
         this.router.get('/users/relation/:id', this.controller.getUserWithRelation)
     }
 }

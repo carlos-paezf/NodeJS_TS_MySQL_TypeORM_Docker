@@ -2,7 +2,7 @@ GET http://localhost:8000/api/users
 
 ################################################################################
 
-GET http://localhost:8000/api/user/a9f52b1b-61d4-4fcb-9630-ff9fbac02f54
+GET http://localhost:8000/api/user/c3e4c380-f5b7-40e4-a6cd-f0fd33f40cf4
 
 ################################################################################
 
@@ -10,11 +10,11 @@ POST http://localhost:8000/api/create-user
 Content-Type: application/json
 
 {
-    "name": "test2",
-    "lastname": "test2",
-    "username": "test2",
-    "email": "test2@test2.com",
-    "password": "test2_password",
+    "name": "test3",
+    "lastname": "test3",
+    "username": "test3",
+    "email": "test3@test2.com",
+    "password": "test3_password",
     "city": "ciudad",
     "providence": "provincia",
     "role": "user"
@@ -38,7 +38,8 @@ Content-Type: application/json
 
 ################################################################################
 
-DELETE http://localhost:8000/api/delete-user/6f56b3be-1510-40e4-bee4-b9a799c460e6
+DELETE http://localhost:8000/api/delete-user/844711b5-0644-41f1-a689-c00520e157c9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVVNFUiIsInN1YiI6ImMzZTRjMzgwLWY1YjctNDBlNC1hNmNkLWYwZmQzM2Y0MGNmNCIsImlhdCI6MTY1NDcxODkzM30.fLBBJSig_cU6OEbXUm5lDPjb8-LIHKawCNHM-CVYIp0
 
 ################################################################################
 

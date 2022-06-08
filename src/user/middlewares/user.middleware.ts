@@ -1,14 +1,16 @@
 import { validate } from 'class-validator';
 import { NextFunction, Request, Response } from 'express';
-import { HttpResponse } from '../../shared/response/http.response';
+import { SharedMiddleware } from '../../shared/middlewares/shared.middleware';
 import { UserDTO } from '../dto/user.dto';
 
 
 /**
  * @author Carlos Páez
  */
-export class UserMiddleware {
-    constructor(private readonly _httpResponse: HttpResponse = new HttpResponse()) { }
+export class UserMiddleware extends SharedMiddleware {
+    constructor() { 
+        super()
+    }
 
     public userValidator = (req: Request, res: Response, next: NextFunction) => {
         const { name, lastname, username, email, password, city, providence, role } = req.body
@@ -25,7 +27,7 @@ export class UserMiddleware {
         valid.role = role
 
         validate(valid).then((error) => {
-            return error.length ? this._httpResponse.BadRequest(res, error) : next()
+            return error.length ? this.httpResponse.InternalServerError(res, error) : next()
         })
     }
 }

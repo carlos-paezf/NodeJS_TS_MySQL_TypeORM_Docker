@@ -61,6 +61,10 @@ export class UserService extends BaseService<UserEntity> {
     }
 
     public async findUserWithRole(id: string, role: RoleType): Promise<UserEntity | null> {
-        return (await this.execRepository).findOneBy({ id, role })
+        return (await this.execRepository)
+            .createQueryBuilder('user')
+            .where({ id })
+            .andWhere({ role })
+            .getOne()
     }
 }
