@@ -42,3 +42,4 @@ npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 - [Servicio de Autenticación - Parte 2](DOC/P11T2_Servicio_Autenticacion.md "P11T2")
 - [Passport Local y JWT - Parte 3](DOC/P11T3_Passport_Local_JWT.md "P11T3")
 - [Creación y Autenticación de Usuarios - Parte 4](DOC/P11T4_Creacion_Autenticacion_Usuarios.md "P11T4")
+- [Crear imagen de Docker para NodeJS y TypeScript](DOC/P12T1_Crear_Imagen_Docker.md "P12T1")
